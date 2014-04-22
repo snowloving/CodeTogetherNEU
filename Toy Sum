@@ -1,4 +1,4 @@
-D. Toy Sum
+Toy Sum
 
 Little Chris is very keen on his toy blocks. His teacher, however, wants Chris to solve more problems, so he decided to play a trick on Chris.
 There are exactly s blocks in Chris's set, each block has a unique number from 1 to s. Chris's teacher picks a subset of blocks X and keeps it to himself. He will give them back only if Chris can pick such a non-empty subset Y from the remaining blocks, that the equality holds:
