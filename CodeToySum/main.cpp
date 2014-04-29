@@ -14,6 +14,7 @@ int main (void)
 	int sum=0;
 	while(scanf("%d",&N)!=EOF)
 	{
+		printf("%d\n",N);
 		memset (vis,0,sizeof(vis));
 		for(int i=0;i<N;i++)
 		{
@@ -26,22 +27,22 @@ int main (void)
 		int pta=1,ptb=s;
 		while(pta<ptb)
 		{
-			if(vis[pta])
+			if(vis[pta]==1)
 			{
-				if(!vis[ptb])
+				if(!vis[ptb]==1)
 				{
 					if(cnt!=0) printf(" ");
 					printf("%d",ptb);
-					vis[ptb]=1;
+					vis[ptb]=2;
 					cnt++;
 				}
-				else if(vis[ptb])
+				else if(vis[ptb]==1)
 				{
 					for(int i=1;i<=s;i++)
 					{
-						if((vis[i] && vis[s+1-i])==0)
+						if((vis[i] || vis[s+1-i])==0)
 						{
-							vis[i]=vis[s+1-i]=1;
+							vis[i]=vis[s+1-i]=2;
 							if(cnt!=0) printf(" ");
 							printf("%d",i);
 							cnt++;
@@ -52,22 +53,22 @@ int main (void)
 					}
 				}
 			}
-			else if(vis[ptb])
+			else if(vis[ptb]==1)
 			{
-				if(!vis[pta])
+				if(!vis[pta]==1)
 				{
 					if(cnt!=0) printf(" ");
 					printf("%d",pta);
-					vis[pta]=1;
+					vis[pta]=2;
 					cnt++;
 				}
-				else if(vis[pta])
+				else if(vis[pta]==1)
 				{
 					for(int i=1;i<=s;i++)
 					{
-						if((vis[i] && vis[s+1-i])==0)
+						if((vis[i] || vis[s+1-i])==0)
 						{
-							vis[i]=vis[s+1-i]=1;
+							vis[i]=vis[s+1-i]=2;
 							if(cnt!=0) printf(" ");
 							printf("%d",i);
 							cnt++;
