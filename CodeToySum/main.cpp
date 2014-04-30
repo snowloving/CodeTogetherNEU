@@ -35,6 +35,7 @@ int main (void)
 					printf("%d",ptb);
 					vis[ptb]=2;
 					cnt++;
+					if(cnt==N) break;
 				}
 				else if(vis[ptb]==1)
 				{
@@ -50,6 +51,7 @@ int main (void)
 							cnt++;
 							break;
 						}
+						if(cnt==N) break;
 					}
 				}
 			}
@@ -61,6 +63,7 @@ int main (void)
 					printf("%d",pta);
 					vis[pta]=2;
 					cnt++;
+					if(cnt==N) break;
 				}
 				else if(vis[pta]==1)
 				{
@@ -76,6 +79,7 @@ int main (void)
 							cnt++;
 							break;
 						}
+						if(cnt==N) break;
 					}
 				}
 			}
@@ -83,5 +87,6 @@ int main (void)
 			pta++;
 			ptb--;
 		}
+		printf("\n");
 	}
 }
