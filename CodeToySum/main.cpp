@@ -25,6 +25,7 @@ int main (void)
 		int tmpsum=0;
 		int cnt=0;
 		int pta=1,ptb=s;
+		int oo=1;
 		while(pta<ptb && cnt<N)
 		{
 			if(!vis[pta] && vis[ptb]==1)					//Pointer a point to a element in the set X
@@ -43,7 +44,7 @@ int main (void)
 			}
 			else if(vis[pta]==1 && vis[ptb]==1)
 			{
-				for(int oo=1;oo<=s/2;oo++)
+				for(oo;oo<=s/2;oo++)
 				{
 					if((vis[oo] || vis[s+1-oo])==0)
 					{
