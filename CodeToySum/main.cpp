@@ -34,7 +34,7 @@ int main (void)
 				printf("%d",pta);
 				cnt++;
 			}
-			else if(vis[ptb]==1 && !vis[pta])
+			else if(vis[pta]==1 && !vis[ptb])
 			{
 				vis[ptb]=2;
 				if(cnt) printf(" ");
