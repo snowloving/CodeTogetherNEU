@@ -25,65 +25,38 @@ int main (void)
 		int tmpsum=0;
 		int cnt=0;
 		int pta=1,ptb=s;
-		while(pta<ptb)
+		while(pta<ptb && cnt<N)
 		{
-			if(vis[pta]==1)
+			if(!vis[pta] && vis[ptb]==1)					//Pointer a point to a element in the set X
 			{
-				if(!vis[ptb]==1)
+				vis[pta]=2;
+				if(cnt) printf(" ");
+				printf("%d",pta);
+				cnt++;
+			}
+			else if(vis[ptb]==1 && !vis[pta])
+			{
+				vis[ptb]=2;
+				if(cnt) printf(" ");
+				printf("%d",ptb);
+				cnt++;
+			}
+			else if(vis[pta]==1 && vis[ptb]==1)
+			{
+				for(int oo=1;oo<=s/2;oo++)
 				{
-					if(cnt!=0) printf(" ");
-					printf("%d",ptb);
-					vis[ptb]=2;
-					cnt++;
-					if(cnt==N) break;
-				}
-				else if(vis[ptb]==1)
-				{
-					for(int i=1;i<=s;i++)
+					if((vis[oo] || vis[s+1-oo])==0)
 					{
-						if((vis[i] || vis[s+1-i])==0)
-						{
-							vis[i]=vis[s+1-i]=2;
-							if(cnt!=0) printf(" ");
-							printf("%d",i);
-							cnt++;
-							printf(" %d",s+1-i);
-							cnt++;
-							break;
-						}
-						if(cnt==N) break;
+						if(cnt) printf(" ");
+						printf("%d",oo);
+						cnt++;
+						printf(" %d",s+1-oo);
+						cnt++;
+						vis[oo]=vis[s+1-oo]=2;
+						break;
 					}
 				}
 			}
-			else if(vis[ptb]==1)
-			{
-				if(!vis[pta]==1)
-				{
-					if(cnt!=0) printf(" ");
-					printf("%d",pta);
-					vis[pta]=2;
-					cnt++;
-					if(cnt==N) break;
-				}
-				else if(vis[pta]==1)
-				{
-					for(int i=1;i<=s;i++)
-					{
-						if((vis[i] || vis[s+1-i])==0)
-						{
-							vis[i]=vis[s+1-i]=2;
-							if(cnt!=0) printf(" ");
-							printf("%d",i);
-							cnt++;
-							printf(" %d",s+1-i);
-							cnt++;
-							break;
-						}
-						if(cnt==N) break;
-					}
-				}
-			}
-			if(cnt==N) break;
 			pta++;
 			ptb--;
 		}
