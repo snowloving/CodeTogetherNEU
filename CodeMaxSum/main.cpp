@@ -10,12 +10,12 @@ int max(int a,int b)
 	return a>b?a:b;
 }
 
+int dp[MAX];
+int s[MAX];//有人说过，大数组不要定义在主函数中，会溢出
 
 int main(void)
 {
 	int N;
-	int dp[MAX];
-	int s[MAX];
 	int st[MAX];
 	scanf("%d",&N);
 	for(int i=1;i<=N;i++)
