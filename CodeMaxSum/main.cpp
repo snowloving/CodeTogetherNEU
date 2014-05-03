@@ -1,10 +1,9 @@
 #include<stdio.h>
 #include<string.h>
 
-#define MAX 100001
+#define MAX 1000005
 #define INF 99999
 
-int cases;
 
 int max(int a,int b)
 {
@@ -33,7 +32,7 @@ int main(void)
 		}
 		dp[1]=s[1];
 		int mark=1;;
-		for(int oo=pst;oo<=n;oo++)
+		for(int oo=2;oo<=n;oo++)
 		{
 			if(dp[oo-1]<0)
 			{
@@ -56,7 +55,8 @@ int main(void)
 				pst=st[oo];
 			}
 		}
-		printf("Case %d:\n%d %d %d\n\n",i,maxn,!pst?1:pst,ped);
+		printf("Case %d:\n%d %d %d\n",i,maxn,!pst?1:pst,ped);
+		if(i!=N) printf("\n");
 	}
 	return 0;
 }
