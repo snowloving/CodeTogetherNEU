@@ -5,7 +5,7 @@
 #define INF 99999
 
 int N;
-int dp[MAX];
+int dp[MAX];				//大数组定义在外面
 int s[MAX];
 int st[MAX];
 
@@ -14,23 +14,10 @@ int max(int a,int b)
 	return a>b?a:b;
 }
 
-<<<<<<< HEAD
-void test();
+
 int main(void)
 {
-	//test();
-	//freopen("1003.in","r",stdin);
-
 	int pst ,ped;
-=======
-int dp[MAX];
-int s[MAX];//有人说过，大数组不要定义在主函数中，会溢出
-
-int main(void)
-{
-	int N;
-	int st[MAX];
->>>>>>> 1f719e14e4d6e4fa61d6b2a3c1980be46a18ef81
 	scanf("%d",&N);
 	for(int i=1;i<=N;i++)
 	{
