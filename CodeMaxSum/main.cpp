@@ -1,22 +1,26 @@
 #include<stdio.h>
 #include<string.h>
 
-#define MAX 1000005
+#define MAX 100005
 #define INF 99999
 
+int N;
+int dp[MAX];
+int s[MAX];
+int st[MAX];
 
 int max(int a,int b)
 {
 	return a>b?a:b;
 }
 
-
+void test();
 int main(void)
 {
-	int N;
-	int dp[MAX];
-	int s[MAX];
-	int st[MAX];
+	//test();
+	//freopen("1003.in","r",stdin);
+
+	int pst ,ped;
 	scanf("%d",&N);
 	for(int i=1;i<=N;i++)
 	{
@@ -24,7 +28,6 @@ int main(void)
 		memset(st,0,sizeof(st));
 		int n;
 		int maxn=-INF;
-		int pst,ped;
 		scanf("%d",&n);
 		for(int oo=1;oo<=n;oo++)
 		{
@@ -59,4 +62,14 @@ int main(void)
 		if(i!=N) printf("\n");
 	}
 	return 0;
+}
+
+void test()
+{
+	FILE *fp;
+	fp=fopen("1003.in","w");
+	fprintf(fp,"1\n100000");
+	for(int j=1;j<=100000;j++)
+		fprintf(fp," 1000 ");
+	fclose(fp);
 }
